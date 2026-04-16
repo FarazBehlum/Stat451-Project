@@ -27,8 +27,12 @@ This project analyzes the [BFRO Bigfoot Sightings dataset](https://www.kaggle.co
 
 To load the dataset:
 ```python
+import kagglehub
 import pandas as pd
-df = pd.read_csv("bfro_reports_geocoded.csv")
+import os
+
+path = kagglehub.dataset_download("thedevastator/unlocking-mysteries-of-bigfoot-through-sightings")
+df = pd.read_csv(os.path.join(path, "bfro_reports_geocoded.csv"))
 ```
 
 ---
